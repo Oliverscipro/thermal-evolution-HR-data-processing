@@ -26,7 +26,7 @@ from merged_data import *
 from import_data import *
 from utils import *
 from plots_subplots import *
-from plot_comparative_spec import *
+from plots_inter import *
 
 
 
@@ -105,7 +105,7 @@ t_profile_ch = pd.read_csv("data/oven_data/Measurement_19-12-2024_12-09-10_BB_ch
 time =  [(960,1000)]
 
 #to know the predominant peak (also possible to know ater usinf the fuction for ms)
-top_peaks_ch = get_top_peaks_list(cleaned_df2_ch, times=time_point, mz_min=50, mz_max=250, top_n=5)
+top_peaks_ch = get_top_peaks_list(cleaned_df2_ch, times=time, mz_min=50, mz_max=250, top_n=5)
 
 #assign formula to the predominant peaks
 formulas_list_ch = match_peaks_to_formulas(top_peaks_ch, peak_table, tol=1e-5)
@@ -114,7 +114,7 @@ formulas_list_ch = match_peaks_to_formulas(top_peaks_ch, peak_table, tol=1e-5)
 formulas_list_ch = format_formulas_with_subscripts(formulas_list_ch)
 
 #to know the predominant peak (also possible to know ater usinf the fuction for ms)
-top_peaks_mag = get_top_peaks_list(cleaned_df2_mag, times=time_point, mz_min=50, mz_max=250, top_n=5)
+top_peaks_mag = get_top_peaks_list(cleaned_df2_mag, times=time, mz_min=50, mz_max=250, top_n=5)
 
 #assign formula to the predominant peaks950,110
 formulas_list_mag = match_peaks_to_formulas(top_peaks_mag, peak_table, tol=1e-5)

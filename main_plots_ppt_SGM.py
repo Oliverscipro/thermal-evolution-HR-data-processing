@@ -38,12 +38,12 @@ from plots_subplots import *
 peak_table = pd.read_csv("data/Peak_Table.csv", sep=",")
 
 # Import temperature data profile from oven
-t_profile = pd.read_csv("data/oven_data/Measurement_16-12-2024_12-49-06_blank.csv"
+t_profile = pd.read_csv("data/oven_data/Measurement_11-12-2024_14-02-21_D-raffinose_0.15umol.csv"
                         , sep = ";", header=1)
 
 
 # Import and adjust the relative time to absolute time from VOCUS data
-hr = import_VOCUS_HR_absolute_time_2024VI_VF("data/vocus_data/20241216_124526_blank_p.csv")
+hr = import_VOCUS_HR_absolute_time_2024VI_VF("data/vocus_data/20241211_135846_D-raffinose_0.15umol_p.csv")
                                           
 # Merged VOCUS data with oven data in order to have temperature profile with intensities.
 merged_df = merge_hr_with_temps(hr, t_profile)
@@ -85,7 +85,7 @@ fig_no_gas = combined_plotly_ions_left(
     cleaned_df, formulas=formulas_ions,
     top_n=5,  mz_min=50, mz_max=200,
     use_log=False, normalize_ions=False, times=None,
-    auto_show=True, title=None, save_path="16-12-2024_12-49-06_blank.png", tmax=None,
+    auto_show=True, title=None, save_path="raffinose.png", tmax=None,
 )
 
 #plot mass spec. Delete formula list if you want to see the mains peaks 
